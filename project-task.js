@@ -44,19 +44,37 @@ Step 4: Test Your Solution
 
 function processFile(fileName, fileData) {
   try {
+
+    let data =fileData;
     // TODO: Add input validation here
+    if( fileName===undefined || fileName.length===0  || fileData.length===0   ||  !(typeof fileData === "string")  ){
+       throw new Error("empty string data nonstring data");
+
+    }
+ 
+ 
     
+
+
     // TODO: Implement simulated file processing here
     console.log(`Processing file: ${fileName}`);
     console.log(`File content: ${fileData}`);
     
     // TODO: Add simulated file operations (reading/writing)
+   
+
+
     
   } catch (err) {
     // TODO: Implement error handling
-    console.error(err);
+    console.error(err.message);
+  }finally{  // TODO: Implement a finally block to close resources
+fileName="";
+fileData="";
+ console.error("In finally");
   }
-  // TODO: Implement a finally block to close resources
+ 
+
 }
 
 // ============================================
